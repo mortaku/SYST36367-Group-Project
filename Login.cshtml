@@ -1,0 +1,73 @@
+﻿@model User
+   
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .all-browsers {
+            margin: 0;
+            padding: 5px;
+            background-color: lightgray;
+        }
+
+            .all-browsers > h1, .browser {
+                margin: 10px;
+                padding: 5px;
+            }
+
+        .browser {
+            background: white;
+        }
+
+            .browser > h2, p {
+                margin: 4px;
+                font-size: 90%;
+            }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: DarkSalmon;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Logo goes here" class="avatar">
+    </div>
+    <div class="text-center">
+        <h1 class="display-4">Welcome To Chantel's Passion for Pet's /*Maybe put a slogan here or something?*/</h1>
+        <p>Please Log In!</p>
+        <form asp-action="Login" method="post" class="m-2">
+            <div asp-validation-summary="All">
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email: </label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label label asp-for="Password" class="control-label">Password: </label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Login" asp-action="Login">
+                    
+                    <input type="submit" value="Forgot Username/Password?" asp-action="Recover">
+                </div>
+            </div>
+        </form>
+        <h3><a class="btn btn-primary" asp-action="Signup">Don't have an account yet? Click here to signup!</a></h3>
+        
+
+
+
+    </div>
+</body>
+</html>
