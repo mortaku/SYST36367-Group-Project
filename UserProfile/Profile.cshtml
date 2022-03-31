@@ -1,0 +1,73 @@
+﻿@model UserProfile
+
+
+@{
+    Layout = "_Layout";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body>
+   
+    <div class="container">
+        <div class="main">
+            <div class="topbar">
+                <a class="btn btn-primary" asp-action="Logout">Logout</a>
+                <a class="btn btn-primary" asp-action="CustomerHome">Home</a>
+            </div>
+            <div class="card-body">
+                <img src="Logo.jpg" class="rounded" width="150">
+            </div>
+        </div>
+        <div class="col-md-8 mt-1">
+            <div class="card mb-3 content">
+                <h1 class="m-3 pt-3">Customer Information</h1>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Full Name:</h5>
+                        </div>
+                        <div class="col-md-9 text-secondary">
+                            @Html.DisplayFor(model => model.FirstName)  @Html.DisplayFor(model => model.LastName)
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Email Address:</h5>
+                        </div>
+                        <div class="col-md-9 text-secondary">
+                            @Html.DisplayFor(model => model.Email)
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Address:</h5>
+                        </div>
+                        <div class="col-md-9 text-secondary">
+                            @Html.DisplayFor(model => model.Address)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Phone Number:</h5>
+                        </div>
+                        <div class="col-md-9 text-secondary">
+                            @Html.DisplayFor(model => model.Phone)
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <h5> Html.ActionLink( "Edit", "EditProfile", new { id = item.ID })</h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
